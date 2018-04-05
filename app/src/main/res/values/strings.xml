@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AboutMe</string>
     <string name="profile_text">ProfilePic</string>
+    <string name="career">Ing. Informática</string>
+    <string name="name">Sara Noemy Romero Menjívar</string>
+    <string name="fb_name">Sara Romero</string>
+    <string name="phone">7870-6967</string>
+    <string name="gh_name">Sararom</string>
+    <string name="email">00030716@uca.edu.sv</string>
+    <string name="share">Share</string>
+    <string name="poweredby">Powered by Sara Romero</string>
 </resources>

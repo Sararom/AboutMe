@@ -30,7 +30,7 @@
         android:layout_marginTop="20sp"
         android:textColor="#000000"
         android:fontFamily="casual"
-        android:text="Sara Noemy Romero Menjívar"/>
+        android:text="@string/name"/>
 
     <TextView
         android:id="@+id/career"
@@ -41,7 +41,7 @@
         android:textSize="20sp"
         android:textColor="#000000"
         android:fontFamily="casual"
-        android:text="Ing. Informática"/>
+        android:text="@string/career"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/fb"
@@ -49,8 +49,9 @@
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:layout_below="@id/career"
-        android:layout_alignLeft="@id/name"
-        android:src="@drawable/fb"/>
+        android:layout_alignStart="@id/name"
+        android:src="@drawable/fb"
+        android:layout_alignLeft="@id/name" />
     <TextView
         android:id="@+id/fbuser"
         android:layout_width="wrap_content"
@@ -63,7 +64,9 @@
         android:fontFamily="casual"
         android:textSize="20sp"
         android:layout_marginStart="10dp"
-        android:text="Sara Romero"/>
+        android:text="@string/fb_name"
+        android:layout_toRightOf="@id/fb"
+        android:layout_marginLeft="10dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cell"
@@ -72,7 +75,8 @@
         android:layout_marginTop="30dp"
         android:layout_below="@id/fb"
         android:layout_alignStart="@id/name"
-        android:src="@drawable/cell"/>
+        android:src="@drawable/cell"
+        android:layout_alignLeft="@id/name" />
     <TextView
         android:id="@+id/cellp"
         android:layout_width="wrap_content"
@@ -85,17 +89,21 @@
         android:textColor="#000000"
         android:fontFamily="casual"
         android:layout_marginStart="10dp"
-        android:text="7870-6967"/>
+        android:text="@string/phone"
+        android:layout_toRightOf="@id/cell"
+        android:layout_marginLeft="10dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/github"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_below="@id/career"
         android:layout_toEndOf="@id/fbuser"
-        android:src="@drawable/github"/>
+        android:src="@drawable/github"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/fbuser" />
     <TextView
         android:id="@+id/ghuser"
         android:layout_width="wrap_content"
@@ -108,7 +116,9 @@
         android:fontFamily="casual"
         android:textSize="20sp"
         android:layout_marginStart="10dp"
-        android:text="Sararom"/>
+        android:text="@string/gh_name"
+        android:layout_toRightOf="@id/github"
+        android:layout_marginLeft="10dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/email"
@@ -116,8 +126,9 @@
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:layout_below="@id/github"
-        android:layout_alignLeft="@id/github"
-        android:src="@drawable/mail"/>
+        android:layout_alignStart="@id/github"
+        android:src="@drawable/mail"
+        android:layout_alignLeft="@id/github" />
     <TextView
         android:id="@+id/emailt"
         android:layout_width="wrap_content"
@@ -130,15 +141,28 @@
         android:fontFamily="casual"
         android:textSize="14sp"
         android:layout_marginStart="10dp"
-        android:text="00030716@uca.edu.sv"/>
+        android:text="@string/email"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/email" />
+
+    <Button
+        android:id="@+id/share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/powered"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="process"
+        android:text="@string/share"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/powered"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="#817e7e"
-        android:text="Powered by Sara Romero"
+        android:text="@string/poweredby"
         android:layout_marginBottom="30dp"/>
 </RelativeLayout>
