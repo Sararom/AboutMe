@@ -18,37 +18,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button sendBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sendBtn = (Button)findViewById(R.id.share_btn);
-
-
-
-        /*sendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.setType("image/*");
-
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Nombre: "+((TextView)findViewById(R.id.name)).getText().toString()+
-                        "\nTitulo: "+((TextView)findViewById(R.id.career)).getText().toString()+
-                        "\nFacebook: "+((TextView)findViewById(R.id.fbuser)).getText().toString()+
-                        "\nGithub: "+((TextView)findViewById(R.id.ghuser)).getText().toString()+
-                        "\nCelular: "+((TextView)findViewById(R.id.cellp)).getText().toString()+
-                        "\nEmail: "+((TextView)findViewById(R.id.emailt)).getText().toString());
-
-                //this verification is needed, otherwise if there is no application capable of handling this intent the application will crash
-                if (sendIntent.resolveActivity(getPackageManager()) != null){
-                    startActivity(sendIntent);
-                }
-            }
-        });*/
+        
     }
 
     public void process(View v){
@@ -56,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         Uri imageUri = Uri.parse("android.resource://com.romero.aboutme/drawable/"+R.drawable.profilepic);
 
+
         sendIntent= new Intent(Intent.ACTION_SEND);
         sendIntent.setType("image/*");
         sendIntent.putExtra(Intent.EXTRA_STREAM,imageUri);
-
+        sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         sendIntent.putExtra(Intent.EXTRA_TEXT, "Nombre: "+((TextView)findViewById(R.id.name)).getText().toString()+
                 "\nTitulo: "+((TextView)findViewById(R.id.career)).getText().toString()+
                 "\nFacebook: "+((TextView)findViewById(R.id.fbuser)).getText().toString()+
